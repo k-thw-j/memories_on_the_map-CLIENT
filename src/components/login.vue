@@ -20,10 +20,6 @@ export default {
     },
     methods:{
         login(){
-            if(this.id == "" || this.pw == ""){
-                alert("빈칸이 있습니다..")
-                return;
-            }
             axios.post('http://localhost:8000/api/auth/login',{id:this.id,pw:this.pw},{withCredentials:true})
             .then((res)=>{
                 alert(res.data.msg)
